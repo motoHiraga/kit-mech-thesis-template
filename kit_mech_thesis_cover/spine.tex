@@ -1,0 +1,17 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 京都工芸繊維大学 機械工学課程／機械物理学専攻・機械設計学専攻
+%% 卒業論文・修士論文の執筆要綱もとに作成した LaTeX テンプレートです
+%% by Motoaki Hiraga (ver.1.0, Oct. 22nd, 2024)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% 背表紙用 TeX ファイル %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\whiledo{\value{SpineCopyCount}>0}{
+    % タイトルの幅 & スペース & 年度の幅 & スペース & 名前の幅
+    \begin{tabular*}<t>{\textheight}{m{0.61\textheight}m{0.0\textheight}m{0.14\textheight}m{0.0\textheight}m{0.22\textheight}}
+        {\fontsize{18pt}{18pt}\selectfont \textsf{\SpineTitle}} & &\setlength{\kanjiskip}{4pt} {\fontsize{14pt}{14pt}\selectfont \textsf{令和 \rensuji{\AcademicYear} 年度}} && \setlength{\kanjiskip}{4pt} {\fontsize{18pt}{18pt}\selectfont \textsf{\MyNameJP}}\\
+    \end{tabular*}
+    \addtocounter{SpineCopyCount}{-1}
+}

@@ -1,0 +1,62 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 京都工芸繊維大学 機械工学課程／機械物理学専攻・機械設計学専攻
+%% 卒業論文・修士論文の執筆要綱もとに作成した LaTeX テンプレートです
+%% by Motoaki Hiraga (ver.1.0, Oct. 22nd, 2024)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[uplatex,dvipdfmx]{kit_mech_thesis}
+% \documentclass[lualatex]{kit_mech_thesis}
+
+% 卒論・修論の表紙・背表紙用データの読み込み
+\input{src/thesis_data.tex}
+
+
+%%%%%%% 表紙・背表紙の印刷部数 %%%%%%%
+\newcommand{\TitleCopyNumber}{4}
+
+% 背表紙用のタイトル
+\newcommand{\SpineTitle}{\ThesisTitleOneJP\ThesisTitleTwoJP}
+% \newcommand{\SpineTitle}{タイトルが長いなどの理由で任意の位置に改行を\newline
+%                          入れたい場合はこの例のよう入力（誤字・脱字に注意）}
+
+
+% 縦書き用パッケージの読み込み
+\ifluatex
+    % LuaTeX の場合
+    \usepackage{lltjext}
+    \usepackage{ltj-latex}
+    \newcommand{\kanjiskip}{\ltjsetkanjiskip}
+\else
+    % その他の場合（pLaTeX/upLaTeXのみ対応）
+    \usepackage{plext}
+\fi
+
+% 背表紙の整列に使用
+\usepackage{array}
+
+% 出力回数のカウンタ
+\newcounter{CoverCopyCount}
+\newcounter{SpineCopyCount}
+
+
+%%%%% ドキュメントの開始 %%%%%
+\begin{document}
+
+\frontmatter
+
+%%%%% 表紙 %%%%%
+\setcounter{CoverCopyCount}{\TitleCopyNumber}
+\whiledo{\value{CoverCopyCount}>0}{
+
+    \input{kit_mech_thesis_cover/title.tex}
+
+    \addtocounter{CoverCopyCount}{-1}
+}
+
+%%%%% 背表紙 %%%%%
+\setcounter{SpineCopyCount}{\TitleCopyNumber}
+\input{kit_mech_thesis_cover/spine.tex}
+
+
+\end{document}
