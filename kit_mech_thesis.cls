@@ -8,7 +8,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{kit_mech_thesis}
-[2024/10/14 v1.0 Unofficial Latex class for a thesis at KIT]
+[2024/10/22 v1.0 Unofficial Latex class for a thesis at KIT]
 
 % 英語化オプション "english" が渡されたか判定するためのフラグ
 \newif\ifenglishoption
