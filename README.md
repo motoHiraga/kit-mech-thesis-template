@@ -5,6 +5,14 @@
 執筆要綱などについては大学のWebページを参照：
 [卒業論文・修士論文 - 京都工芸繊維大学 機械工学課程](http://www.mech.kit.ac.jp/student/thesis.html)
 
+## コンパイラの変更方法
+``thesis_main.tex``から``kit_mech_thesis``のオプションを書き換えてください．
+- pLaTeXの場合：
+  ``\documentclass[platex,dvipdfmx]{kit_mech_thesis}``
+- upLaTeXの場合：
+  ``\documentclass[uplatex,dvipdfmx]{kit_mech_thesis}``
+- LuaLaTeXの場合：
+  ``\documentclass[lualatex]{kit_mech_thesis}``
 
 ## 【おまけ】多分一番早い VS Code での LaTeX 環境構築方法
 
