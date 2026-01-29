@@ -11,7 +11,7 @@
 \whiledo{\value{SpineCopyCount}>0}{
     % タイトルの幅 & スペース & 年度の幅 & スペース & 名前の幅
     \begin{tabular*}<t>{\textheight}{m{0.61\textheight}m{0.0\textheight}m{0.14\textheight}m{0.0\textheight}m{0.22\textheight}}
-        {\fontsize{18pt}{18pt}\selectfont \textsf{\SpineTitle}} & &\setlength{\kanjiskip}{4pt} {\fontsize{14pt}{14pt}\selectfont \textsf{令和 \rensuji{\AcademicYear} 年度}} && \setlength{\kanjiskip}{4pt} {\fontsize{18pt}{18pt}\selectfont \textsf{\MyNameJP}}\\
+        {\fontsize{18pt}{18pt}\selectfont \textsf{\ifthenelse{\isundefined{\SpineTitle}}{\ifthenelse{\isundefined{\ThesisTitleTriJP}}{\ThesisTitleOneJP\ThesisTitleTwoJP}{\ThesisTitleOneJP\ThesisTitleTwoJP\ThesisTitleTriJP}}{\SpineTitle}}} & &\setlength{\kanjiskip}{4pt} {\fontsize{14pt}{14pt}\selectfont \textsf{令和 \rensuji{\number\numexpr\AcademicYear\relax} 年度}} && \setlength{\kanjiskip}{4pt} {\fontsize{18pt}{18pt}\selectfont \textsf{\MyNameJP}}\\
     \end{tabular*}
     \addtocounter{SpineCopyCount}{-1}
 }

@@ -28,7 +28,7 @@
     {}{{\Huge {\ThesisTypeError}}}
 
     \vspace*{4.6truemm}
-    {\fontsize{18pt}{18pt}\selectfont 令和 {\AcademicYear} 年度}
+    {\fontsize{18pt}{18pt}\selectfont 令和 {\number\numexpr\AcademicYear\relax} 年度}
 
     \vspace{14truemm}
     \ifthenelse{\equal{\ThesisType}{B}}{
@@ -49,12 +49,29 @@
     \noindent
     \rule{123truemm}{0.7pt}
 
-    \vspace{14.8truemm}
-    {\fontsize{22pt}{22pt}\selectfont \textbf{\ThesisTitleTwoJP}}
+    \ifthenelse{\isundefined{\ThesisTitleTriJP}}{
+          \vspace{14.8truemm}
+          {\fontsize{22pt}{22pt}\selectfont \textbf{\ThesisTitleTwoJP}}
 
-    \vspace{-2.5truemm}
-    \noindent
-    \rule{123truemm}{0.7pt}
+          \vspace{-2.5truemm}
+          \noindent
+          \rule{123truemm}{0.7pt}
+    }{
+          \vspace{6truemm}
+          {\fontsize{22pt}{22pt}\selectfont \textbf{\ThesisTitleTwoJP}}
+
+          \vspace{-2.5truemm}
+          \noindent
+          \rule{123truemm}{0.7pt}
+
+          \vspace{6truemm}
+          {\fontsize{22pt}{22pt}\selectfont \textbf{\ThesisTitleTriJP}}
+
+          \vspace{-2.5truemm}
+          \noindent
+          \rule{123truemm}{0.7pt}
+          \vspace{-8.2truemm}
+    }
 
     \vspace{25truemm}
     \ifthenelse{{\equal{\ThesisType}{B}}}{
@@ -114,7 +131,7 @@
   \clearpage
 
   %%%% 英語版の表紙および中表紙（修論のみ）
-  \ifthenelse{{\equal{\ThesisType}{B}}\OR\NOT{\isundefined{\TitleCopyNumber}}}{}{
+  \ifthenelse{{\equal{\ThesisType}{B}}\OR\NOT{\isundefined{\NoEnglishTitle}}}{}{
     \begin{center}
 
       \vspace*{15.85truemm}

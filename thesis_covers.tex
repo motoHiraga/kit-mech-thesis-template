@@ -11,15 +11,8 @@
 % 卒論・修論の表紙・背表紙用データの読み込み
 \input{src/thesis_data.tex}
 
-
-%%%%%%% 表紙・背表紙の印刷部数 %%%%%%%
-\newcommand{\TitleCopyNumber}{4}
-
-% 背表紙用のタイトル
-\newcommand{\SpineTitle}{\ThesisTitleOneJP\ThesisTitleTwoJP}
-% \newcommand{\SpineTitle}{タイトルが長いなどの理由で任意の位置に改行を\newline
-%                          入れたい場合はこの例のよう入力（誤字・脱字に注意）}
-
+% 英語版の表紙を表示しない
+\newcommand{\NoEnglishTitle}{}
 
 % 縦書き用パッケージの読み込み
 \ifluatex
